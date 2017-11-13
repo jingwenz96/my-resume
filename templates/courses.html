@@ -1,0 +1,66 @@
+{% extends "resume-base.html" %}
+{% block title %}Courses{% endblock %}
+
+{% block head %}
+{{ super () }}
+{% endblock %}
+
+{% block page_content %}
+<div class="container">
+
+  <img src="{{ url_for('static', filename = 'img/ud-logo.jpg')}}" width="30%" alt="ud-logo">
+  <h1><i class="fa fa-book fa-2x" aria-hidden="true"></i> Courses </h1>
+
+  <!-- LOOPING -->
+  {% for course in courses %}
+  <ul class="list-unstyled">
+    <li>
+      <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#{{course}}">{{course}}</button>
+      <div class="modal fade" id="{{course}}" tabindex="-1" role="dialog" aria-labelledby="{{course}}Label" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="{{course}}label">Course Info</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+              <h3>{{course}}</h3> {% if course == 'MISY330' %}
+              <p>Covers the design and implementation of enterprise databases in the business environment. A networked setting and its effect on database management will be emphasized.</p>
+              {% elif course == 'MISY350' %}
+              <p>Covers concepts related to client side development, including cascading style sheets and JavaScript.</p>
+              {% else %}
+              <p>Uses calculus to study price determination and income distribution in a market economy; and the behavior of firms and industry under conditions of pure and imperfect competition.</p>
+              {% endif %}
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  </ul>
+  {% endfor%}
+
+<!-- Custom Style -->
+  <style>
+    div {
+      text-align: center;
+      color: orange;
+    }
+
+    h3 {
+      font-family: "Times New Roman";
+      color: gray;
+    }
+
+    p {
+      color: black;
+      font-family: "Times New Roman";
+      text-align: left;
+    }
+  </style>
+</div>
+{% endblock %}
