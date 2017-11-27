@@ -11,7 +11,7 @@
   <!-- Fontawesome CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!-- Personal CSS -->
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/resume.css/') }}">
   {% endblock %}
 </head>
 
@@ -19,8 +19,8 @@
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background-color:orange;">
     <div class="container">
       <a class="navbar-brand" href="/">
-         <img src="{{ url_for('static', filename='img/name-logo.png') }}"
-          alt="name" width="130">
+         <img src="{{ url_for('static', filename='img/mylogo.png') }}"
+          alt="name" width="150">
        </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -37,6 +37,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/courses">Courses</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/professors">Professors</a>
           </li>
         </ul>
       </div>
