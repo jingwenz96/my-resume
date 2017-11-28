@@ -24,7 +24,7 @@
         <select class="form-control" name="professor">
           {% for professor in professors %}
             {% if professor == course.professor %}
-              <option selected="selected">{{ professor.name }}</option>
+              <option selected="selected">{{professor.name}}</option>
             {% else %}
               <option>{{professor.name}}</option>
             {% endif %}

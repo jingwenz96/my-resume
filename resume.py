@@ -52,12 +52,11 @@ def add_professors():
         professor = Professor(name=name, department=department)
         db.session.add(professor)
         db.session.commit()
-
         return redirect(url_for('professors'))
 
 @app.route('/professor/edit/<int:id>', methods=['GET', 'POST'])
 def edit_professor(id):
-    professor= Professor.query.filter_by(id=id).first()
+    professor = Professor.query.filter_by(id=id).first()
     if request.method == 'GET':
         return render_template('professor-edit.html', professor=professor)
     if request.method == 'POST':
@@ -78,7 +77,7 @@ def courses():
 def add_courses():
     if request.method == 'GET':
         professors = Professor.query.all()
-        return render_template('course-add.html', courses=courses, professors=professors)
+        return render_template('course-add.html', professors=professors)
 
     if request.method == 'POST':
         # get data from the form
@@ -88,7 +87,7 @@ def add_courses():
         professor_name = request.form['professor']
         professor = Professor.query.filter_by(name=professor_name).first()
         course = Course(number=number,title=title, description=description, professor=professor)
-        course.professor = professor
+
         # insert the data into the database
         db.session.add(course)
         db.session.commit()
