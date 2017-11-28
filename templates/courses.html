@@ -1,6 +1,28 @@
 {% extends "resume-base.html" %}
 {% block title %}Courses{% endblock %}
-{% block head %} {{ super () }} {% endblock %}
+{% block head %}
+{{ super () }} 
+<!-- Custom Style -->
+<style>
+  #add {
+    color:white;
+  }
+
+  #edit {
+    color:white;
+  }
+
+  h3 {
+    font-family: "Times New Roman";
+    color: gray;
+  }
+
+  p {
+    color: black;
+    font-family: "Times New Roman";
+    text-align: left;
+  }
+</style>{% endblock %}
 
 {% block page_content %}
 <div class="container">
@@ -29,7 +51,8 @@
               <td>{{ course.course_number }}</td>
               <td>{{ course.title }}</td>
               <td>{{ course.professor.name }}</td>
-              <td>
+
+  <td>
       <!-- BUTTON -->
       <button type="button" class="btn btn-outline-warning" data-toggle="modal" data-target="#{{course.id}}">View</button>
 
@@ -71,25 +94,4 @@
   {% endif %}
 </div>
 
-  <!-- Custom Style -->
-  <style>
-    #add {
-      color:white;
-    }
-
-    #edit {
-      color:white;
-    }
-
-    h3 {
-      font-family: "Times New Roman";
-      color: gray;
-    }
-
-    p {
-      color: black;
-      font-family: "Times New Roman";
-      text-align: left;
-    }
-  </style>
 {% endblock %}

@@ -87,7 +87,7 @@ def add_courses():
         description = request.form['description']
         professor_name = request.form['professor']
         professor = Professor.query.filter_by(name=professor_name).first()
-        course = Course(course_number=course_number,title=title, description=description)
+        course = Course(course_number=course_number,title=title, description=description,professor=professor)
 
         # insert the data into the database
         db.session.add(course)
@@ -103,7 +103,7 @@ def edit_course(id):
         return render_template('course-edit.html', course=course, professors=professors)
     if request.method == 'POST':
         # update data based on the form data
-        course_number = request.form['course_number']
+        course.course_number = request.form['course_number']
         course.title = request.form['title']
         course.description = request.form['description']
         professor_name = request.form['professor']
