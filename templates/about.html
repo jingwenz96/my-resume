@@ -1,29 +1,28 @@
-{% extends "resume-base.html" %}
+{% extends "resume-base.html" %} {% block title %}About Me{% endblock %}
 
-{% block title %}About Me{% endblock %}
+{% block head %} {{ super () }}
+<!-- Styling -->
+<style>
+  h1 {
+    text-align: center;
+  }
 
-{% block head %}
-  {{ super () }}
+  #yea {
+    color: tomato;
+  }
+
+  #smile {
+    color: pink;
+  }
+</style>
 {% endblock %}
 
 {% block page_content %}
-  <div class="container">
-    <h1>
+<div class="container">
+  <h1>
       <i id = "yea" class="fa fa-hand-peace-o fa-2x" aria-hidden="true"></i>
       <i id = "smile" class="fa fa-smile-o fa-2x" aria-hidden="true"></i>
     </h1>
+</div>
 
-<!-- Styling -->
-    <style>
-      h1 {
-        text-align:center;
-      }
-      #yea {
-        color:tomato;
-      }
-      #smile {
-        color:pink;
-      }
-    </style>
-  </div>
 {% endblock %}

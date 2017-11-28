@@ -10,8 +10,12 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
   <!-- Fontawesome CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-  <!-- Personal CSS -->
-  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/resume.css') }}">
+  <!-- Custom Style -->
+  <style>
+    body {
+      padding-top: 90px;
+    }
+  </style>
   {% endblock %}
 </head>
 
@@ -46,8 +50,7 @@
     </div>
   </nav>
 
-  {% block page_content %}
-  {% endblock %}
+  {% block page_content %} {% endblock %}
 
   <!-- Scrips -->
   {% block scripts%}

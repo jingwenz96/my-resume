@@ -1,7 +1,9 @@
 {% extends "resume-base.html" %}
+
 {% block title %}Courses{% endblock %}
+
 {% block head %}
-{{ super () }} 
+{{ super () }}
 <!-- Custom Style -->
 <style>
   #add {
@@ -22,7 +24,8 @@
     font-family: "Times New Roman";
     text-align: left;
   }
-</style>{% endblock %}
+</style>
+{% endblock %}
 
 {% block page_content %}
 <div class="container">
@@ -48,7 +51,7 @@
       {% for course in courses %}
       <tr>
               <th scope="row">{{ course.id }}</th>
-              <td>{{ course.course_number }}</td>
+              <td>{{ course.number }}</td>
               <td>{{ course.title }}</td>
               <td>{{ course.professor.name }}</td>
 
