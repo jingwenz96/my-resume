@@ -34,6 +34,7 @@
         <td>{{ professor.department }}</td>
         <td>
           <a href="/professor/edit/{{professor.id}}" class="btn btn-outline-warning" role="button" aria-disabled="true">Edit</a>
+          <a href="/professor/delete/{{professor.id}}" class="btn btn-outline-danger" role="button">Delete</a>
         </td>
       </tr>
       {% endfor%}
